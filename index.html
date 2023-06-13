@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1 class="logo">Awesome Books</h1>
+        <nav>
+            <ul>
+                <li id="list" class="active nav-link">List</li>
+                <li id="new-book" class=" nav-link">Add New</li>
+                <li id="contact" class=" nav-link">Contact</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="books-container section-container opened list">
+        <h1>All awesome books</h1>
+        <ul class="listOfBooks">
+        </ul>
+    </section>
+
+
+    <section class="create-form section-container new-book hidden">
+        <h1>Add new Book</h1>
+        <form action="">
+
+            <div class="inputs-col">
+                <div class="input-container">
+                    <input type="text" class="title" placeholder="title">
+                </div>
+
+                <div class="input-container">
+                    <input class="author" type="text" placeholder="Author">
+                </div>
+            </div>
+            <div class="submit-btn-container">
+                <button type="submit">Add</button>
+            </div>
+        </form>
+
+    </section>
+
+
+    <section class="contact-section section-container contact hidden">
+        <h1>contact information</h1>
+        <p>
+            Do you have any question, or you just want to say "hello"<br>
+            you can react out to us with
+        </p>
+
+        <ul>
+            <li>
+                our email: test@gmail.com
+            </li>
+
+            <li>
+                our phone number: 093 849 348674
+            </li>
+
+            <li>
+                our address streetname: 22, 2884 City, Country
+            </li>
+        </ul>
+    </section>
+</body>
+
+</html>
