@@ -45,52 +45,55 @@ The following application is an application that illustrate the usage of object 
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-### Usage
-To run the project click on the HTML document on your local machine or use the live server VS.code extension
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-### Key Features <a name="key-features"></a>
-
-
-- solid Linting  
-- responsive design 
-- Clear message 
-- best illustration  
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-Currently the application is not live yet but our teams are working days and night in order to put the project live
-
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+- <a href="https://nodejs.org/en/download">Node.js</a>
+- <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm</a>
+
+### Setup
+
+Clone this repository to your desired folder:
+
+```sh
+  cd desired-folder
+  git clone git@github.com:myaccount/my-project.git
+```
+
+### Install
+
+Install this project with:
+
+```sh
+  cd cloned-folder
+  npm install
+```
+
+### Usage
+
+To run the project, 
+```js
+npm run dev
+```
+
+To run the linters, use `npm run lint` from the root directory of the project.
+
+### Run tests
+
+There are currently no tests in this project.
+
 
 ### Prerequisites
 
 In order to run this project you need: 
 - web browser
 
-### Setup
+- nodejs 
 
-Clone this repository to your desired folder:
-
-### Install
-run `npm install` for installing all dependencies
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- npm
 
 
 ## 👥 Authors <a name="authors"></a>
@@ -109,6 +112,12 @@ run `npm install` for installing all dependencies
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **webpack**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 🤝 Contributing <a name="contributing"></a>

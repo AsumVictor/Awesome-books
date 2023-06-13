@@ -1,41 +1,25 @@
+import BookElement from './modules/BookELement.js';
+import { storeToLocalStorage, getFromLocalStorage } from './modules/LocalStorage.js';
+import { luxon } from './node_modules/luxon/build/global/luxon.js';
+
+const timeIndicator = document.querySelector('.timeIndicator');
+
 const titleInput = document.querySelector('.title');
 const authorInput = document.querySelector('.author');
 const form = document.querySelector('form');
 const booksListElement = document.querySelector('.listOfBooks');
 const navigationLinks = document.querySelectorAll('.nav-link');
 
-class Main {
+class Main extends BookElement {
   constructor() {
+    super();
     this.listOfBooks = [];
   }
-
-  storeToLocalStorage = () => {
-    const listInJson = JSON.stringify(this.listOfBooks);
-    localStorage.setItem('books', listInJson);
-  };
-
-  bookElement = (title, author, id) => {
-    const element = document.createElement('li');
-    element.id = id;
-    element.innerHTML = `
-  
-    <div class="">
-        <p>${title} by ${author}</p>
-    </div>
-    <button>
-        Delete
-        <i class='bx bx-trash'></i>
-    </button>
-
-        `;
-    element.querySelector('button').addEventListener('click', () => this.removeElement(id));
-    return element;
-  };
 
   removeElement = (id) => {
     this.listOfBooks = this.listOfBooks.filter((el) => el.id !== id);
     document.getElementById(id).remove();
-    this.storeToLocalStorage();
+    storeToLocalStorage('books', this.listOfBooks);
   };
 
   printElements = () => {
@@ -55,10 +39,10 @@ class Main {
     this.printElements();
     titleInput.value = null;
     authorInput.value = null;
-    this.storeToLocalStorage();
+    storeToLocalStorage('books', this.listOfBooks);
   };
 
-  formSubmit() {
+  formSubmit = () => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       if (titleInput.value.trim().length === 0 || authorInput.value.trim().length === 0) {
@@ -69,11 +53,12 @@ class Main {
     });
   }
 
-  loadData() {
-    window.addEventListener('load', () => {
-      const getFromLocalStorage = JSON.parse(localStorage.getItem('books'));
-      if (getFromLocalStorage) {
-        this.listOfBooks = getFromLocalStorage;
+  loadData = () => {
+    window.addEventListener('load', async () => {
+      const getBooksFromLocalStorage = await getFromLocalStorage('books');
+      console.log(getBooksFromLocalStorage);
+      if (getBooksFromLocalStorage) {
+        this.listOfBooks = getBooksFromLocalStorage;
         this.printElements();
       }
     });
@@ -87,11 +72,24 @@ class Main {
     newActivePage.classList.remove('hidden');
     newActivePage.classList.add('opened');
   }
+
+  getLocalTime = () => {
+    const time = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);
+    return time;
+  }
+
+  getTime = () => {
+    setInterval(() => {
+      timeIndicator.innerHTML = this.getLocalTime();
+    }, 1000);
+  }
 }
 
 const mainClass = new Main();
 mainClass.formSubmit();
 mainClass.loadData();
+mainClass.getTime();
+
 navigationLinks.forEach((el) => {
   el.addEventListener('click', () => {
     document.querySelector('.active').classList.remove('active');

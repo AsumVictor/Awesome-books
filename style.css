@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgba(239, 167, 35, 0.874);
+}
+
+.main-header {
+  background-color: white;
+  margin: 10px auto;
+  max-width: 800px;
+  display: flex;
+  padding: 20px 50px;
+  justify-content: space-between;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.main-header .logo {
+  font-size: 20px;
+  letter-spacing: 0.1rem;
+  font-family: 'Tilt Prism', cursive;
+}
+
+.main-header ul {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.section-container {
+  max-width: 800px;
+  background-color: white;
+  min-height: 400px;
+  border-radius: 10px;
+  margin: auto;
+  padding: 20px 50px;
+}
+
+.books-container ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  padding-top: 40px;
+  gap: 20px;
+}
+
+.books-container ul li {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.books-container ul li div {
+  background-color: rgba(239, 167, 35, 0.874);
+  width: 90%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.submit-btn-container button {
+  padding: 20px 70px;
+  background-color: rgba(239, 167, 35, 0.874);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.books-container ul li button {
+  padding-inline: 40px;
+  border: none;
+  background-color: rgba(239, 167, 35, 0.874);
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+
+.submit-btn-container button:active {
+  background-color: rgba(184, 133, 38, 0.874);
+}
+
+.books-container ul li button:active {
+  background-color: rgba(198, 142, 39, 0.874);
+}
+
+.books-container ul li button i {
+  font-size: 20px;
+}
+
+.inputs-col {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.inputs-col > :nth-child(1) {
+  width: 70%;
+}
+
+.inputs-col > :nth-child(2) {
+  width: 30%;
+}
+
+.input-container {
+  height: 30px;
+}
+
+.input-container input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.341);
+  padding: 10px;
+  outline: none;
+}
+
+.input-container input:focus {
+  border-color: rgba(239, 167, 35, 0.874);
+}
+
+.submit-btn-container {
+  margin-top: 50px;
+}
+
+.contact-section h1 {
+  text-align: center;
+}
+
+.contact-section p {
+  margin: 20px;
+  line-height: 1.7rem;
+}
+
+.contact-section ul {
+  margin: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.opened {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  color: rgba(136, 90, 4, 0.874);
+}
+
+.time {
+  display: flex;
+  justify-content: end;
+  padding: 20px 50px;
+  margin: auto;
+  max-width: 800px;
+  position: relative;
+  bottom: 10px;
+  color: white;
+  font-weight: bold;
+}
